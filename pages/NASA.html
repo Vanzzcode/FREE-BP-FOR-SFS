@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA Rocket — Free BP SFS</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/additions.css" />
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<header>
+  <div class="header-left">
+    <div class="header-icon">🚀</div>
+    <span class="page-title">NASA Rocket</span>
+  </div>
+  <div class="header-right">
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar">
+  <div class="sidebar-header"><p>Navigation</p></div>
+  <ul class="nav-list">
+    <li><a href="../index.html"><span class="nav-icon">🏠</span> Halaman Utama</a></li>
+    <li><a href="artemis.html"><span class="nav-icon">🚀</span> NASA Rocket</a></li>
+    <li><a href="spacex.html"><span class="nav-icon">⚡</span> SpaceX Rocket</a></li>
+    <li><a href="satelit.html"><span class="nav-icon">🛰️</span> Satelit</a></li>
+    <li><a href="random.html"><span class="nav-icon">🎲</span> Random</a></li>
+    <li><a href="about.html"><span class="nav-icon">ℹ️</span> About</a></li>
+  </ul>
+  <div class="sidebar-divider"></div>
+  <ul class="nav-list nav-auth-area"></ul>
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-section-label">📊 Statistik</div>
+  <div class="stats-block">
+    <div class="stat-item">
+      <div class="stat-dot"></div>
+      <div class="stat-info"><span class="stat-label">Pengunjung Unik</span><span class="stat-value" id="statVisitors">0</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🗂️</div>
+      <div class="stat-info"><span class="stat-label">Total Blueprint</span><span class="stat-value" id="statTotalBP">0</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">📥</div>
+      <div class="stat-info"><span class="stat-label">Total Download</span><span class="stat-value" id="statTotalDownloads">0</span></div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="page-hero fade-in">
+      <h2>NASA Rocket</h2>
+      <p>Blueprint roket dan part-part dari program NASA.</p>
+    </div>
+    <div class="bp-grid fade-in-2">
+
+      <div class="bp-card" data-bp-id="artemis-1">
+        <img src="../assets/img/nasa/Artemis1.jpg" class="bp-card-img" alt="Artemis SLS">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Artemis I — SLS Block 1</h3>
+          <p class="desc">Space Launch System versi pertama, digunakan pada misi Artemis I tanpa awak mengelilingi bulan.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/8lJQGj_rEfG0EI2ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+      <div class="bp-card" data-bp-id="artemis-2">
+        <img src="../assets/img/nasa/orioncapsule.jpg" class="bp-card-img" alt="Orion Capsule">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Orion Capsule</h3>
+          <p class="desc">Kapsul kru Orion yang dirancang untuk membawa astronot ke orbit bulan dan permukaan bulan.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/9RnA4j_qEfG0EI2ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+      <div class="bp-card" data-bp-id="artemis-3">
+        <img src="../assets/img/nasa/Artemis2.jpg" class="bp-card-img" alt="Artemis 2">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Artemis II — Crewed</h3>
+          <p class="desc">Misi Artemis II dengan kru penuh mengelilingi bulan untuk pertama kalinya sejak Apollo 17.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/aiAHHkCzEfG0s42ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+      
+      <div class="bp-card" data-bp-id="apollo-1">
+        <img src="../assets/img/nasa/saturnV.jpg" class="bp-card-img" alt="Saturn V">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Keandre</span>
+          <h3>Saturn V (Apollo 11)</h3>
+          <p class="desc">Roket terkuat yang pernah dibuat. Membawa misi Apollo 11 hingga 17 ke bulan dengan tinggi 111 meter.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/zu4wChmoEfGNnNsmxpcUUg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+<footer><p>Made with 🚀 for <span>Space Flight Simulator</span> community</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

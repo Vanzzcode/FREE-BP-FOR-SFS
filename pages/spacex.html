@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceX Rocket — Free BP SFS</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/additions.css" />
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<header>
+  <div class="header-left">
+    <div class="header-icon">⚡</div>
+    <span class="page-title">SpaceX Rocket</span>
+  </div>
+  <div class="header-right">
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar">
+  <div class="sidebar-header"><p>Navigation</p></div>
+  <ul class="nav-list">
+    <li><a href="../index.html"><span class="nav-icon">🏠</span> Halaman Utama</a></li>
+    <li><a href="NASA.html"><span class="nav-icon">🚀</span> NASA Rocket</a></li>
+    <li><a href="spacex.html"><span class="nav-icon">⚡</span> SpaceX Rocket</a></li>
+    <li><a href="satelit.html"><span class="nav-icon">🛰️</span> Satelit</a></li>
+    <li><a href="random.html"><span class="nav-icon">🎲</span> Random</a></li>
+    <li><a href="about.html"><span class="nav-icon">ℹ️</span> About</a></li>
+  </ul>
+  <div class="sidebar-divider"></div>
+  <ul class="nav-list nav-auth-area"></ul>
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-section-label">📊 Statistik</div>
+  <div class="stats-block">
+    <div class="stat-item">
+      <div class="stat-dot"></div>
+      <div class="stat-info"><span class="stat-label">Pengunjung Unik</span><span class="stat-value" id="statVisitors">0</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🗂️</div>
+      <div class="stat-info"><span class="stat-label">Total Blueprint</span><span class="stat-value" id="statTotalBP">0</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">📥</div>
+      <div class="stat-info"><span class="stat-label">Total Download</span><span class="stat-value" id="statTotalDownloads">0</span></div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="page-hero fade-in">
+      <h2>⚡ SpaceX Rocket</h2>
+      <p>Blueprint roket-roket revolusioner dari SpaceX milik Elon Musk.</p>
+    </div>
+    <div class="bp-grid fade-in-2">
+
+      <div class="bp-card" data-bp-id="spacex-1">
+        <img src="../assets/img/spacex/falcon9.jpg" class="bp-card-img" alt="Falcon 9">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Falcon 9</h3>
+          <p class="desc">Roket reusable dua tahap yang paling sering diluncurkan, andalan pengiriman satelit ke orbit.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/1oH1cklOEfG7gI2ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+      <div class="bp-card" data-bp-id="spacex-2">
+        <img src="../assets/img/spacex/Starship.jpg" class="bp-card-img" alt="Starship">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> Allstar BP</span>
+          <h3>Starship</h3>
+          <p class="desc">Roket super-heavy terbesar yang pernah dibuat, dirancang untuk misi ke Mars dan bulan.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/PP2vv0epEfG6c42ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+      <div class="bp-card" data-bp-id="spacex-3">
+        <img src="../assets/img/spacex/falconheavy.jpg" class="bp-card-img" alt="Falcon Heavy">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Falcon Heavy</h3>
+          <p class="desc">Versi triple-core dari Falcon 9 dengan tiga booster yang mendarat secara bersamaan.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/859L2kNREfG3Fo2ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+      <div class="bp-card" data-bp-id="spacex-4">
+        <img src="../assets/img/spacex/dragoncapsule.jpg" class="bp-card-img" alt="Dragon Capsule">
+        <div class="bp-card-body">
+          <span class="bp-author"><span class="author-icon">👤</span> By Allstar BP</span>
+          <h3>Dragon Capsule</h3>
+          <p class="desc">Kapsul kru SpaceX yang digunakan untuk membawa astronot ke ISS secara rutin.</p>
+        </div>
+        <div class="bp-card-footer">
+          <div class="use-count">📥 Digunakan: <strong>0</strong>x</div>
+          <a href="https://sharing.spaceflightsimulator.app/rocket/xB_d2koDEfG71I2ciX4zyg" class="btn-download" target="_blank">⬇ Ambil BP</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+<footer><p>Made with 🚀 for <span>Space Flight Simulator</span> community</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

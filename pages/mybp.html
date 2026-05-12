@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blueprint Saya — Free BP SFS</title>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="stylesheet" href="../assets/css/additions.css"/>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<header>
+  <div class="header-left"><div class="header-icon">🗂️</div><span class="page-title">Blueprint Saya</span></div>
+  <div class="header-right"><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div>
+</header>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar">
+  <div class="sidebar-header"><p>Navigation</p></div>
+  <div id="sidebarUser"></div>
+  <ul class="nav-list">
+    <li><a href="../index.html"><span class="nav-icon">🏠</span> Halaman Utama</a></li>
+    <li><a href="NASA.html"><span class="nav-icon">🚀</span> NASA Rocket</a></li>
+    <li><a href="spacex.html"><span class="nav-icon">⚡</span> SpaceX Rocket</a></li>
+    <li><a href="satelit.html"><span class="nav-icon">🛰️</span> Satelit</a></li>
+    <li><a href="random.html"><span class="nav-icon">🎲</span> Random</a></li>
+    <li id="navUpload" style="display:none"><a href="upload.html"><span class="nav-icon">📤</span> Upload Blueprint</a></li>
+    <li id="navMyBP" style="display:none"><a href="mybp.html"><span class="nav-icon">🗂️</span> Blueprint Saya</a></li>
+    <li id="navLogin"><button class="nav-login-btn" id="btnOpenLogin"><span class="nav-icon">🔑</span> Login / Daftar</button></li>
+    <li id="navLogout" style="display:none"><button class="nav-login-btn" id="btnLogout"><span class="nav-icon">🚪</span> Logout</button></li>
+    <li><a href="about.html"><span class="nav-icon">ℹ️</span> About</a></li>
+  </ul>
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-section-label">📊 Statistik</div>
+  <div class="stats-block">
+    <div class="stat-item"><div class="stat-dot"></div><div class="stat-info"><span class="stat-label">Pengunjung Unik</span><span class="stat-value" id="statVisitors">0</span></div></div>
+    <div class="stat-item"><div class="stat-icon">🗂️</div><div class="stat-info"><span class="stat-label">Total Blueprint</span><span class="stat-value" id="statTotalBP">0</span></div></div>
+    <div class="stat-item"><div class="stat-icon">📥</div><div class="stat-info"><span class="stat-label">Total Download</span><span class="stat-value" id="statTotalDownloads">0</span></div></div>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <div class="page-hero fade-in">
+      <h2>🗂️ Blueprint Saya</h2>
+      <p>Semua blueprint yang kamu upload. Hanya kamu yang bisa menghapusnya.</p>
+    </div>
+    <!-- Jika belum login -->
+    <div id="myBpLoginPrompt" style="display:none;text-align:center;padding:48px 16px">
+      <p style="font-size:48px;margin-bottom:16px">🔑</p>
+      <p style="font-family:'Orbitron',sans-serif;color:var(--accent-cyan);margin-bottom:8px">Login Dulu!</p>
+      <p style="color:var(--text-muted);margin-bottom:20px">Kamu harus login untuk melihat blueprint kamu.</p>
+      <button class="btn-submit" id="btnOpenLogin" style="max-width:200px;margin:0 auto">Login / Daftar</button>
+    </div>
+    <!-- Grid blueprint -->
+    <div id="myBpGrid" class="fade-in-2" style="padding-bottom:40px">
+      <div style="color:var(--text-muted);padding:32px;text-align:center">Memuat...</div>
+    </div>
+    <!-- Upload shortcut -->
+    <div id="myBpUploadCTA" style="display:none;text-align:center;padding:24px 0 48px">
+      <a href="upload.html" class="btn-submit" style="display:inline-block;max-width:240px;text-decoration:none">📤 Upload Blueprint Baru</a>
+    </div>
+  </div>
+</main>
+<footer><p>Made with 🚀 for <span>Space Flight Simulator</span> community</p></footer>
+
+<div id="modalAuth" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="btnCloseAuth">✕</button>
+    <p class="modal-title">🔑 AKUN SFS</p>
+    <div class="modal-tabs"><button id="tabLogin" class="tab-active">Masuk</button><button id="tabRegister">Daftar</button></div>
+    <div id="panelLogin"><form id="formLogin">
+      <div class="form-group"><label>Username</label><input id="loginUsername" type="text" placeholder="username kamu" required autocomplete="username"/></div>
+      <div class="form-group"><label>Password</label><input id="loginPassword" type="password" placeholder="••••••••" required autocomplete="current-password"/></div>
+      <button type="submit" class="btn-submit">Masuk</button>
+    </form></div>
+    <div id="panelRegister" style="display:none"><form id="formRegister">
+      <div class="form-group"><label>Username</label><input id="regUsername" type="text" placeholder="pilih username unik" required autocomplete="username"/></div>
+      <div class="form-group"><label>Password</label><input id="regPassword" type="password" placeholder="••••••••" required autocomplete="new-password"/></div>
+      <div class="form-group"><label>Konfirmasi Password</label><input id="regConfirm" type="password" placeholder="••••••••" required autocomplete="new-password"/></div>
+      <button type="submit" class="btn-submit">Daftar Sekarang</button>
+    </form></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  window.SFS.onAuthChange(async (user) => {
+    const loginPrompt = document.getElementById('myBpLoginPrompt');
+    const grid        = document.getElementById('myBpGrid');
+    const cta         = document.getElementById('myBpUploadCTA');
+    if (!user) {
+      loginPrompt.style.display = '';
+      grid.style.display = 'none';
+      cta.style.display  = 'none';
+      return;
+    }
+    loginPrompt.style.display = 'none';
+    grid.style.display = '';
+    cta.style.display  = '';
+    // Load my blueprints
+    const { data, error } = await window.SFS.getMyBlueprints();
+    if (error || !data.length) {
+      grid.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:32px">Belum ada blueprint. <a href="upload.html" style="color:var(--accent-cyan)">Upload sekarang!</a></p>';
+      return;
+    }
+    // renderCard tersedia dari main.js
+    grid.innerHTML = data.map(bp => window._renderCard ? window._renderCard(bp, true) : '').join('');
+    if (window._attachCardEvents) window._attachCardEvents(grid);
+  });
+});
+</script>
+</body>
+</html>
